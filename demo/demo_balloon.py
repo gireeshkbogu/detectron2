@@ -24,7 +24,8 @@ def setup_cfg(args):
     cfg.DATASETS.TRAIN = ("balloon/train",)
     cfg.DATASETS.TEST = ("balloon/val",)   # no metrics implemented for this dataset
     cfg.DATALOADER.NUM_WORKERS = 2
-    cfg.MODEL.WEIGHTS = "detectron2://COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x/137849600/model_final_f10217.pkl"  # initialize from model zoo
+    #cfg.MODEL.WEIGHTS = "detectron2://COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x/137849600/model_final_f10217.pkl"  # initialize from model zoo
+    cfg.MODEL.WEIGHTS = "../output/model_final.pth"
     cfg.SOLVER.IMS_PER_BATCH = 2
     cfg.SOLVER.BASE_LR = 0.00025
     cfg.SOLVER.MAX_ITER = 300    # 300 iterations seems good enough, but you can certainly train longer
